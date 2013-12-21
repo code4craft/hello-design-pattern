@@ -12,6 +12,7 @@ import helloworld.structural.bridge.DesignPatternWorldImpl;
 import helloworld.structural.bridge.HelloWorldBridge;
 import helloworld.structural.composite.CompositeHelloWorld;
 import helloworld.structural.decorator.HelloWorldDecorator;
+import helloworld.structural.facade.HelloWorldFacade;
 
 /**
  * @author yihua.huang@dianping.com
@@ -49,11 +50,15 @@ public class Main {
         System.out.println(adapterHelloWorld.helloWorld());
 
         HelloWorld bridgeHelloWorld = new HelloWorldBridge(new DesignPatternWorldImpl());
+        //leave bridgeHelloWorld' output to compositeHelloWorld
 
         HelloWorld compositeHelloWorld = new CompositeHelloWorld(bridgeHelloWorld, new CompositeHelloWorld.DefaultHelloWorld());
         System.out.println(compositeHelloWorld.helloWorld());
 
         HelloWorldDecorator helloWorldDecorator = new HelloWorldDecorator(new HelloWorldDecorator.DefaultHelloWorld());
         System.out.println(helloWorldDecorator.helloWorld());
+
+        HelloWorld facadeHelloWorld = HelloWorldFacade.instance().facadeHelloWorld();
+        System.out.println(facadeHelloWorld.helloWorld());
     }
 }
