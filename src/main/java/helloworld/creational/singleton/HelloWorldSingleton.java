@@ -13,14 +13,14 @@ public class HelloWorldSingleton implements HelloWorld {
     }
 
     public static HelloWorldSingleton instance() {
-        return HelloWorldSingletonInner.INSTANCE;
+        return HelloWorldSingletonHolder.INSTANCE;
     }
 
     private HelloWorldSingleton() {
 
     }
 
-    static class HelloWorldSingletonInner {
+    static class HelloWorldSingletonHolder {
         private static final HelloWorldSingleton INSTANCE = new HelloWorldSingleton();
     }
 

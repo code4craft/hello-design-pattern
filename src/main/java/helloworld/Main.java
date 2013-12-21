@@ -13,6 +13,7 @@ import helloworld.structural.bridge.HelloWorldBridge;
 import helloworld.structural.composite.CompositeHelloWorld;
 import helloworld.structural.decorator.HelloWorldDecorator;
 import helloworld.structural.facade.HelloWorldFacade;
+import helloworld.structural.flyweight.HelloWorldFlyWeightFactory;
 
 /**
  * @author yihua.huang@dianping.com
@@ -60,5 +61,8 @@ public class Main {
 
         HelloWorld facadeHelloWorld = HelloWorldFacade.instance().facadeHelloWorld();
         System.out.println(facadeHelloWorld.helloWorld());
+
+        HelloWorld flyWeightHelloWorld = HelloWorldFlyWeightFactory.instance().createHelloWorld("Hello Flyweight!");
+        System.out.println(flyWeightHelloWorld.helloWorld());
     }
 }

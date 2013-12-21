@@ -2,7 +2,6 @@ package helloworld.structural.facade;
 
 import helloworld.HelloWorld;
 import helloworld.creational.builder.HelloWorldBuilder;
-import helloworld.structural.decorator.HelloWorldDecorator;
 
 /**
  * @author yihua.huang@dianping.com
@@ -16,10 +15,10 @@ public class HelloWorldFacade {
      * facade is usually used with singleton
      */
     public static HelloWorldFacade instance(){
-        return HelloWorldFacadeInner.INSTANCE;
+        return HelloWorldFacadeInstanceHolder.INSTANCE;
     }
 
-    private static class HelloWorldFacadeInner {
+    private static class HelloWorldFacadeInstanceHolder {
         private final static HelloWorldFacade INSTANCE = new HelloWorldFacade();
     }
 
