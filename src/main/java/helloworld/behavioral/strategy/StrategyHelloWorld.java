@@ -1,4 +1,4 @@
-package helloworld.strategy;
+package helloworld.behavioral.strategy;
 
 /**
  * @author yihua.huang@dianping.com

@@ -6,6 +6,8 @@ import helloworld.creational.builder.HelloWorldBuilder;
 import helloworld.creational.factory_method.FactoryMethodHelloWorldFactory;
 import helloworld.creational.prototype.HelloWorldPrototype;
 import helloworld.creational.singleton.HelloWorldSingleton;
+import helloworld.structural.adapter.HelloAdapterDesignPattern;
+import helloworld.structural.adapter.HelloWorldAdapter;
 
 /**
  * @author yihua.huang@dianping.com
@@ -38,6 +40,9 @@ public class Main {
 
         HelloWorld singletonHelloWorld = HelloWorldSingleton.instance();
         System.out.println(singletonHelloWorld.helloWorld());
+
+        HelloWorld adapterHelloWorld = new HelloWorldAdapter(new HelloAdapterDesignPattern());
+        System.out.println(adapterHelloWorld.helloWorld());
 
     }
 }
