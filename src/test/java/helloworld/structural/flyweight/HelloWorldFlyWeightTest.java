@@ -14,5 +14,7 @@ public class HelloWorldFlyWeightTest {
     public void testHelloWorldFlyWeight(){
         HelloWorld helloWorld = HelloWorldFlyWeightFactory.instance().createHelloWorld("Hello Flyweight!");
         assertThat(helloWorld.helloWorld(),is("Hello Flyweight!"));
+        helloWorld = HelloWorldFlyWeightFactory.instance().createHelloWorld("Hello Flyweight!");
+        assertThat(helloWorld.helloWorld(),is("Hello Flyweight!"));
     }
 }
