@@ -5,7 +5,7 @@ import helloworld.SplitHelloWorld;
 /**
  * @author yihua.huang@dianping.com
  */
-public interface HelloWorldFactory {
+public interface SplitHelloWorldFactory {
 
     public SplitHelloWorld.HelloWorldSlogan createHelloWorldSlogan();
 

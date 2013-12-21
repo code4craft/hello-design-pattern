@@ -1,16 +1,27 @@
 package helloworld.abstract_factory;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author yihua.huang@dianping.com
  */
-public class AbstractFactory{
+public class AbstractFactory {
 
-
-    public static HelloWorldFactory designPatternFactory() {
-        return new DesignPatternHelloWorldFactory();
+    public enum Type {
+        Java, DesignPattern;
     }
 
-    public static HelloWorldFactory javaFactory() {
-        return new JavaHelloWorldFactory();
+    private static Map<Type, Class<? extends SplitHelloWorldFactory>> map;
+
+    static {
+        map = new HashMap<Type, Class<? extends SplitHelloWorldFactory>>();
+        map.put(Type.Java, JavaSplitHelloWorldFactory.class);
+        map.put(Type.DesignPattern, DesignPatternSplitHelloWorldFactory.class);
     }
+
+    public static SplitHelloWorldFactory select(Type type) throws IllegalAccessException, InstantiationException {
+        return map.get(type).newInstance();
+    }
+
 }

@@ -5,7 +5,7 @@ import helloworld.SplitHelloWorld;
 /**
  * @author yihua.huang@dianping.com
  */
-public class DesignPatternHelloWorldFactory implements HelloWorldFactory{
+public class DesignPatternSplitHelloWorldFactory implements SplitHelloWorldFactory {
 
     @Override
     public SplitHelloWorld.HelloWorldSlogan createHelloWorldSlogan() {
