@@ -11,6 +11,7 @@ import helloworld.structural.adapter.HelloWorldAdapter;
 import helloworld.structural.bridge.DesignPatternWorldImpl;
 import helloworld.structural.bridge.HelloWorldBridge;
 import helloworld.structural.composite.CompositeHelloWorld;
+import helloworld.structural.decorator.HelloWorldDecorator;
 
 /**
  * @author yihua.huang@dianping.com
@@ -52,5 +53,7 @@ public class Main {
         HelloWorld compositeHelloWorld = new CompositeHelloWorld(bridgeHelloWorld, new CompositeHelloWorld.DefaultHelloWorld());
         System.out.println(compositeHelloWorld.helloWorld());
 
+        HelloWorldDecorator helloWorldDecorator = new HelloWorldDecorator(new HelloWorldDecorator.DefaultHelloWorld());
+        System.out.println(helloWorldDecorator.helloWorld());
     }
 }
