@@ -1,5 +1,7 @@
-package helloworld.abstract_factory;
+package helloworld.creational.abstract_factory;
 
+import helloworld.creational.abstract_factory.AbstractFactory;
+import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -14,9 +16,9 @@ public class AbstractFactoryTest {
     public void testHelloWorld() throws InstantiationException, IllegalAccessException {
         SplitHelloWorldFactory splitHelloWorldFactory = AbstractFactory.select(AbstractFactory.Type.Java);
         assertThat(splitHelloWorldFactory.createHelloWorldTarget().target(), is("Java"));
-        assertThat(splitHelloWorldFactory.createHelloWorldSlogan().slogan(), is("Hello world"));
+        assertThat(splitHelloWorldFactory.createHelloWorldSlogan().slogan(), is("Hello"));
         splitHelloWorldFactory = AbstractFactory.select(AbstractFactory.Type.DesignPattern);
-        assertThat(splitHelloWorldFactory.createHelloWorldSlogan().slogan(), is("Hello world"));
+        assertThat(splitHelloWorldFactory.createHelloWorldSlogan().slogan(), is("Hello"));
         assertThat(splitHelloWorldFactory.createHelloWorldTarget().target(), is("Abstract Factory"));
     }
 

@@ -1,4 +1,4 @@
-package helloworld.factory_method;
+package helloworld.creational.factory_method;
 
 import helloworld.HelloWorld;
 

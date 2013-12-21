@@ -1,7 +1,7 @@
-package helloworld.abstract_factory;
+package helloworld.creational.builder;
 
 import helloworld.HelloWorld;
-import helloworld.builder.HelloWorldBuilder;
+import helloworld.creational.builder.HelloWorldBuilder;
 import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

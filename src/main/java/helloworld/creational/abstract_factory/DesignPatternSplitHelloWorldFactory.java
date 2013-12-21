@@ -1,4 +1,4 @@
-package helloworld.abstract_factory;
+package helloworld.creational.abstract_factory;
 
 import helloworld.SplitHelloWorld;
 

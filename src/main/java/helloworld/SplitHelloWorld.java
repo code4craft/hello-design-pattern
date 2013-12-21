@@ -43,11 +43,4 @@ public class SplitHelloWorld implements HelloWorld {
         }
     }
 
-    public HelloWorldSlogan getHelloWorldSlogan() {
-        return helloWorldSlogan;
-    }
-
-    public HelloWorldTarget getHelloWorldTarget() {
-        return helloWorldTarget;
-    }
 }

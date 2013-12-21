@@ -1,4 +1,4 @@
-package helloworld.builder;
+package helloworld.creational.builder;
 
 import helloworld.HelloWorld;
 import helloworld.SplitHelloWorld;
