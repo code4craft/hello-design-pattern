@@ -5,6 +5,7 @@ import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
 import helloworld.creational.builder.HelloWorldBuilder;
 import helloworld.creational.factory_method.FactoryMethodHelloWorldFactory;
 import helloworld.creational.prototype.HelloWorldPrototype;
+import helloworld.creational.singleton.HelloWorldSingleton;
 
 /**
  * @author yihua.huang@dianping.com
@@ -34,6 +35,9 @@ public class Main {
 
         HelloWorld prototypeHelloWorld = HelloWorldPrototype.PROTOTYPE.clone();
         System.out.println(prototypeHelloWorld.helloWorld());
+
+        HelloWorld singletonHelloWorld = HelloWorldSingleton.instance();
+        System.out.println(singletonHelloWorld.helloWorld());
 
     }
 }
