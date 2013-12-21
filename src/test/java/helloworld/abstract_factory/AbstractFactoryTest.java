@@ -12,10 +12,12 @@ public class AbstractFactoryTest {
 
     @Test
     public void testHelloWorld(){
-        HelloWorldFactory helloWorldFactory = new JavaHelloWorldFactory();
-        assertThat(helloWorldFactory.createHelloWorld().helloWorld(), is("Hello world, Java!"));
-        helloWorldFactory = new DesignPatternHelloWorldFactory();
-        assertThat(helloWorldFactory.createHelloWorld().helloWorld(), is("Hello world, Abstract Factory!"));
+        HelloWorldFactory helloWorldFactory = AbstractFactory.javaFactory();
+        assertThat(helloWorldFactory.createHelloWorldTarget().target(), is("Java"));
+        assertThat(helloWorldFactory.createHelloWorldSlogan().slogan(), is("Hello world"));
+        helloWorldFactory = AbstractFactory.designPatternFactory();
+        assertThat(helloWorldFactory.createHelloWorldSlogan().slogan(), is("Hello world"));
+        assertThat(helloWorldFactory.createHelloWorldTarget().target(), is("Abstract Factory"));
     }
 
 }

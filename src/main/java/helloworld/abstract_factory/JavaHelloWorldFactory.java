@@ -1,21 +1,27 @@
 package helloworld.abstract_factory;
 
-import helloworld.HelloWorld;
+import helloworld.SplitHelloWorld;
 
 /**
  * @author yihua.huang@dianping.com
  */
 public class JavaHelloWorldFactory implements HelloWorldFactory{
+
     @Override
-    public HelloWorld createHelloWorld() {
-        return new JavaHelloWorld();
+    public SplitHelloWorld.HelloWorldSlogan createHelloWorldSlogan() {
+        return new SplitHelloWorld.DefaultSlogan();
     }
 
-    class JavaHelloWorld implements HelloWorld{
+    @Override
+    public SplitHelloWorld.HelloWorldTarget createHelloWorldTarget() {
+        return new JavaHelloWorldTarget();
+    }
+
+    class JavaHelloWorldTarget implements SplitHelloWorld.HelloWorldTarget{
 
         @Override
-        public String helloWorld() {
-            return "Hello world, Java!";
+        public String target() {
+            return "Java";
         }
     }
 }

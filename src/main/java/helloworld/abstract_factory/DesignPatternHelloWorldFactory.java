@@ -1,21 +1,27 @@
 package helloworld.abstract_factory;
 
-import helloworld.HelloWorld;
+import helloworld.SplitHelloWorld;
 
 /**
  * @author yihua.huang@dianping.com
  */
 public class DesignPatternHelloWorldFactory implements HelloWorldFactory{
+
     @Override
-    public HelloWorld createHelloWorld() {
-        return new DesignPatternHelloWorld();
+    public SplitHelloWorld.HelloWorldSlogan createHelloWorldSlogan() {
+        return new SplitHelloWorld.DefaultSlogan();
     }
 
-    class DesignPatternHelloWorld implements HelloWorld{
+    @Override
+    public SplitHelloWorld.HelloWorldTarget createHelloWorldTarget() {
+        return new DesignPatternHelloWorldTarget();
+    }
+
+    class DesignPatternHelloWorldTarget implements SplitHelloWorld.HelloWorldTarget {
 
         @Override
-        public String helloWorld() {
-            return "Hello world, Abstract Factory!";
+        public String target() {
+            return "Abstract Factory";
         }
     }
 }
