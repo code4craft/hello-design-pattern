@@ -15,9 +15,10 @@ public class HelloWorldDecoratorTest {
 
     @Test
     public void testHelloWorldDecorator(){
-        HelloWorld helloWorldDecorator = new HelloWorldDecorator(new HelloWorldDecorator.DefaultHelloWorld());
-        assertThat(helloWorldDecorator.helloWorld(),is("Hello Decorator!"));
+        HelloWorldDecorator helloWorldDecorator = new HelloWorldDecorator(new HelloWorldDecorator.DefaultHelloWorld());
+        assertThat(helloWorldDecorator.helloWorld(),is("Hello World!"));
+        assertThat(helloWorldDecorator.helloDecorator(),is("Hello Decorator!"));
         helloWorldDecorator = new HelloWorldDecorator(helloWorldDecorator);
-        assertThat(helloWorldDecorator.helloWorld(),is("Hello Decorator!"));
+        assertThat(helloWorldDecorator.helloWorld(),is("Hello World!"));
     }
 }

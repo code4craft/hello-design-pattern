@@ -1,4 +1,4 @@
-package helloworld.structural.decorator;
+package helloworld.structural.proxy;
 
 import helloworld.HelloWorld;
 import org.apache.commons.lang3.StringUtils;
@@ -6,21 +6,17 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * @author yihua.huang@dianping.com
  */
-public class HelloWorldDecorator implements HelloWorld {
+public class HelloWorldProxy implements HelloWorld {
 
     private HelloWorld helloWorld;
 
-    public HelloWorldDecorator(HelloWorld helloWorld) {
+    public HelloWorldProxy(HelloWorld helloWorld) {
         this.helloWorld = helloWorld;
     }
 
     @Override
     public String helloWorld() {
-        return helloWorld.helloWorld();
-    }
-
-    public String helloDecorator(){
-        return StringUtils.substringBefore(helloWorld.helloWorld()," ")+" Decorator!";
+        return StringUtils.substringBefore(helloWorld.helloWorld()," ")+" Proxy!";
     }
 
     public static class DefaultHelloWorld implements HelloWorld {

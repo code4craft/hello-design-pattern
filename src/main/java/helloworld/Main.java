@@ -14,6 +14,7 @@ import helloworld.structural.composite.CompositeHelloWorld;
 import helloworld.structural.decorator.HelloWorldDecorator;
 import helloworld.structural.facade.HelloWorldFacade;
 import helloworld.structural.flyweight.HelloWorldFlyWeightFactory;
+import helloworld.structural.proxy.HelloWorldProxy;
 
 /**
  * @author yihua.huang@dianping.com
@@ -21,6 +22,8 @@ import helloworld.structural.flyweight.HelloWorldFlyWeightFactory;
 public class Main {
 
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
+
+        System.out.println("We are creational patterns!");
 
         SplitHelloWorldFactory splitHelloWorldFactory = AbstractFactory.select(AbstractFactory.Type.DesignPattern);
         HelloWorld abstractFactoryHelloWorld = new SplitHelloWorld(splitHelloWorldFactory.createHelloWorldSlogan(),
@@ -47,6 +50,8 @@ public class Main {
         HelloWorld singletonHelloWorld = HelloWorldSingleton.instance();
         System.out.println(singletonHelloWorld.helloWorld());
 
+        System.out.println("We are structural patterns!");
+
         HelloWorld adapterHelloWorld = new HelloWorldAdapter(new HelloAdapterDesignPattern());
         System.out.println(adapterHelloWorld.helloWorld());
 
@@ -57,12 +62,17 @@ public class Main {
         System.out.println(compositeHelloWorld.helloWorld());
 
         HelloWorldDecorator helloWorldDecorator = new HelloWorldDecorator(new HelloWorldDecorator.DefaultHelloWorld());
-        System.out.println(helloWorldDecorator.helloWorld());
+        System.out.println(helloWorldDecorator.helloDecorator());
 
         HelloWorld facadeHelloWorld = HelloWorldFacade.instance().facadeHelloWorld();
         System.out.println(facadeHelloWorld.helloWorld());
 
         HelloWorld flyWeightHelloWorld = HelloWorldFlyWeightFactory.instance().createHelloWorld("Hello Flyweight!");
         System.out.println(flyWeightHelloWorld.helloWorld());
+
+        HelloWorldProxy helloWorldProxy = new HelloWorldProxy(new HelloWorldProxy.DefaultHelloWorld());
+        System.out.println(helloWorldProxy.helloWorld());
+
+        System.out.println("We are behavioral patterns!");
     }
 }
