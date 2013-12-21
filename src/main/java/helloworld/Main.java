@@ -8,6 +8,9 @@ import helloworld.creational.prototype.HelloWorldPrototype;
 import helloworld.creational.singleton.HelloWorldSingleton;
 import helloworld.structural.adapter.HelloAdapterDesignPattern;
 import helloworld.structural.adapter.HelloWorldAdapter;
+import helloworld.structural.bridge.DesignPatternWorldImpl;
+import helloworld.structural.bridge.HelloWorldBridge;
+import helloworld.structural.composite.CompositeHelloWorld;
 
 /**
  * @author yihua.huang@dianping.com
@@ -43,6 +46,11 @@ public class Main {
 
         HelloWorld adapterHelloWorld = new HelloWorldAdapter(new HelloAdapterDesignPattern());
         System.out.println(adapterHelloWorld.helloWorld());
+
+        HelloWorld bridgeHelloWorld = new HelloWorldBridge(new DesignPatternWorldImpl());
+
+        HelloWorld compositeHelloWorld = new CompositeHelloWorld(bridgeHelloWorld, new CompositeHelloWorld.DefaultHelloWorld());
+        System.out.println(compositeHelloWorld.helloWorld());
 
     }
 }

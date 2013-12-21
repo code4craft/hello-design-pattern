@@ -7,9 +7,9 @@ import helloworld.HelloWorld;
  */
 public class HelloWorldAdapter implements HelloWorld{
 
-    private HelloDesignPattern helloDesignPattern;
+    private HelloAdapterDesignPattern helloDesignPattern;
 
-    public HelloWorldAdapter(HelloDesignPattern helloDesignPattern) {
+    public HelloWorldAdapter(HelloAdapterDesignPattern helloDesignPattern) {
         this.helloDesignPattern = helloDesignPattern;
     }
 
