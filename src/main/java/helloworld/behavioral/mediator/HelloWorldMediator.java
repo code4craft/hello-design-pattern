@@ -16,12 +16,12 @@ public class HelloWorldMediator {
         this.helloWorldObject = helloWorldObject;
     }
 
-    public String slogan() {
-        return helloWorldInterjection.slogan();
+    public String interjection() {
+        return helloWorldInterjection.interjection();
     }
 
-    public String target() {
-        return helloWorldObject.target();
+    public String object() {
+        return helloWorldObject.object();
     }
 
 }

@@ -39,13 +39,13 @@ public class Main {
         System.out.println("We are creational patterns!");
 
         SplitHelloWorldFactory abstractFactory = AbstractFactory.select(AbstractFactory.Type.DesignPattern);
-        HelloWorld abstractFactoryHelloWorld = new SplitHelloWorld(abstractFactory.createHelloWorldSlogan(),
-                abstractFactory.createHelloWorldTarget());
+        HelloWorld abstractFactoryHelloWorld = new SplitHelloWorld(abstractFactory.createHelloWorldInterjection(),
+                abstractFactory.createHelloWorldObject());
         System.out.println(abstractFactoryHelloWorld.helloWorld());
 
         HelloWorld builderHelloWorld = HelloWorldBuilder.builder()
-                .slogan("Hello")
-                .target("Builder").getHelloWorld();
+                .interjection("Hello")
+                .object("Builder").getHelloWorld();
         System.out.println(builderHelloWorld.helloWorld());
 
         /**
@@ -103,12 +103,12 @@ public class Main {
         }
         System.out.println();
 
-        HelloWorldInterjection helloWorldSlogan = new HelloWorldInterjection();
-        HelloWorldObject helloWorldTarget = new HelloWorldObject();
-        HelloWorldMediator helloWorldMediator = new HelloWorldMediator(helloWorldSlogan,helloWorldTarget);
-        helloWorldSlogan.setHelloWorldMediator(helloWorldMediator);
-        helloWorldTarget.setHelloWorldMediator(helloWorldMediator);
-        System.out.println(helloWorldTarget.helloWorld());
+        HelloWorldInterjection helloWorldInterjection = new HelloWorldInterjection();
+        HelloWorldObject helloWorldObject = new HelloWorldObject();
+        HelloWorldMediator helloWorldMediator = new HelloWorldMediator(helloWorldInterjection,helloWorldObject);
+        helloWorldInterjection.setHelloWorldMediator(helloWorldMediator);
+        helloWorldObject.setHelloWorldMediator(helloWorldMediator);
+        System.out.println(helloWorldObject.helloWorld());
 
         HelloWorldMementoOriginator helloWorldMementoOriginator = new HelloWorldMementoOriginator();
         HelloWorldMementoOriginator.Memento memento = helloWorldMementoOriginator.set("Hello Memento!").saveToMemento();

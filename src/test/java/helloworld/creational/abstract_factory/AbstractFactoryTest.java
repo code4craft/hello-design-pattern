@@ -15,11 +15,11 @@ public class AbstractFactoryTest {
     @Test
     public void testHelloWorld() throws InstantiationException, IllegalAccessException {
         SplitHelloWorldFactory splitHelloWorldFactory = AbstractFactory.select(AbstractFactory.Type.Java);
-        assertThat(splitHelloWorldFactory.createHelloWorldTarget().target(), is("Java"));
-        assertThat(splitHelloWorldFactory.createHelloWorldSlogan().slogan(), is("Hello"));
+        assertThat(splitHelloWorldFactory.createHelloWorldObject().object(), is("Java"));
+        assertThat(splitHelloWorldFactory.createHelloWorldInterjection().interjection(), is("Hello"));
         splitHelloWorldFactory = AbstractFactory.select(AbstractFactory.Type.DesignPattern);
-        assertThat(splitHelloWorldFactory.createHelloWorldSlogan().slogan(), is("Hello"));
-        assertThat(splitHelloWorldFactory.createHelloWorldTarget().target(), is("Abstract Factory"));
+        assertThat(splitHelloWorldFactory.createHelloWorldInterjection().interjection(), is("Hello"));
+        assertThat(splitHelloWorldFactory.createHelloWorldObject().object(), is("Abstract Factory"));
     }
 
 }

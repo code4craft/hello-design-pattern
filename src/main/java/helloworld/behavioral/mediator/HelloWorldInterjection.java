@@ -19,12 +19,12 @@ public class HelloWorldInterjection implements SplitHelloWorld.HelloWorldInterje
     }
 
     @Override
-    public String slogan() {
+    public String interjection() {
         return "Hello";
     }
 
     @Override
     public String helloWorld() {
-        return slogan() + separator + helloWorldMediator.target() + terminator;
+        return interjection() + separator + helloWorldMediator.object() + terminator;
     }
 }

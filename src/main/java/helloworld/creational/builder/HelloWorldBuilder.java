@@ -8,34 +8,34 @@ import helloworld.SplitHelloWorld;
  */
 public class HelloWorldBuilder {
 
-    private String slogan;
+    private String interjection;
 
-    private String target;
+    private String object;
 
     public static HelloWorldBuilder builder() {
         return new HelloWorldBuilder();
     }
 
-    public HelloWorldBuilder slogan(String slogan) {
-        this.slogan = slogan;
+    public HelloWorldBuilder interjection(String interjection) {
+        this.interjection = interjection;
         return this;
     }
 
-    public HelloWorldBuilder target(String target) {
-        this.target = target;
+    public HelloWorldBuilder object(String object) {
+        this.object = object;
         return this;
     }
 
     public HelloWorld getHelloWorld() {
         return new SplitHelloWorld(new SplitHelloWorld.HelloWorldInterjection() {
             @Override
-            public String slogan() {
-                return slogan;
+            public String interjection() {
+                return interjection;
             }
         }, new SplitHelloWorld.HelloWorldObject() {
             @Override
-            public String target() {
-                return target;
+            public String object() {
+                return object;
             }
         });
     }

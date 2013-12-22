@@ -22,23 +22,23 @@ public class SplitHelloWorld implements HelloWorld {
 
     @Override
     public String helloWorld() {
-        return helloWorldInterjection.slogan() + separator + helloWorldObject.target() + terminator;
+        return helloWorldInterjection.interjection() + separator + helloWorldObject.object() + terminator;
     }
 
     public interface HelloWorldInterjection {
 
-        public String slogan();
+        public String interjection();
     }
 
     public interface HelloWorldObject {
 
-        public String target();
+        public String object();
     }
 
     public static class DefaultInterjection implements HelloWorldInterjection {
 
         @Override
-        public String slogan() {
+        public String interjection() {
             return "Hello";
         }
     }

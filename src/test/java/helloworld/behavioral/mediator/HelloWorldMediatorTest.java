@@ -11,12 +11,12 @@ public class HelloWorldMediatorTest {
 
     @Test
     public void testHelloWorldMediator(){
-        HelloWorldInterjection helloWorldSlogan = new HelloWorldInterjection();
-        HelloWorldObject helloWorldTarget = new HelloWorldObject();
-        HelloWorldMediator helloWorldMediator = new HelloWorldMediator(helloWorldSlogan,helloWorldTarget);
-        helloWorldSlogan.setHelloWorldMediator(helloWorldMediator);
-        helloWorldTarget.setHelloWorldMediator(helloWorldMediator);
-        assertThat(helloWorldSlogan.helloWorld(),is("Hello Mediator!"));
-        assertThat(helloWorldTarget.helloWorld(),is("Hello Mediator!"));
+        HelloWorldInterjection helloWorldInterjection = new HelloWorldInterjection();
+        HelloWorldObject helloWorldObject = new HelloWorldObject();
+        HelloWorldMediator helloWorldMediator = new HelloWorldMediator(helloWorldInterjection,helloWorldObject);
+        helloWorldInterjection.setHelloWorldMediator(helloWorldMediator);
+        helloWorldObject.setHelloWorldMediator(helloWorldMediator);
+        assertThat(helloWorldInterjection.helloWorld(),is("Hello Mediator!"));
+        assertThat(helloWorldObject.helloWorld(),is("Hello Mediator!"));
     }
 }

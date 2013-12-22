@@ -13,13 +13,13 @@ public class HelloWorldBuilderTest {
     @Test
     public void testHelloWorldBuilder(){
         HelloWorld builderHelloWorld = HelloWorldBuilder.builder()
-                .slogan("Hello")
-                .target("Builder").getHelloWorld();
+                .interjection("Hello")
+                .object("Builder").getHelloWorld();
         assertThat(builderHelloWorld.helloWorld(),is("Hello Builder!"));
 
         HelloWorld helloWorld = HelloWorldBuilder.builder()
-                .slogan("Hello")
-                .target("World").getHelloWorld();
+                .interjection("Hello")
+                .object("World").getHelloWorld();
         assertThat(helloWorld.helloWorld(),is("Hello World!"));
     }
 }

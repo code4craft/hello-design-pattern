@@ -19,12 +19,12 @@ public class HelloWorldObject implements SplitHelloWorld.HelloWorldObject, Hello
     }
 
     @Override
-    public String target() {
+    public String object() {
         return "Mediator";
     }
 
     @Override
     public String helloWorld() {
-        return helloWorldMediator.slogan() + separator + target() + terminator;
+        return helloWorldMediator.interjection() + separator + object() + terminator;
     }
 }

@@ -24,8 +24,8 @@ public class HelloWorldFacade {
 
     public HelloWorld facadeHelloWorld(){
         return HelloWorldBuilder.builder()
-                .slogan("Hello")
-                .target("Facade").getHelloWorld();
+                .interjection("Hello")
+                .object("Facade").getHelloWorld();
     }
 
 }
