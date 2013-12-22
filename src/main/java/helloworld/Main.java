@@ -10,6 +10,7 @@ import helloworld.behavioral.iterator.HelloWorldCharacterIterator;
 import helloworld.behavioral.mediator.HelloWorldMediator;
 import helloworld.behavioral.mediator.HelloWorldSlogan;
 import helloworld.behavioral.mediator.HelloWorldTarget;
+import helloworld.behavioral.memento.HelloWorldMementoOriginator;
 import helloworld.creational.abstract_factory.AbstractFactory;
 import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
 import helloworld.creational.builder.HelloWorldBuilder;
@@ -106,6 +107,12 @@ public class Main {
         helloWorldSlogan.setHelloWorldMediator(helloWorldMediator);
         helloWorldTarget.setHelloWorldMediator(helloWorldMediator);
         System.out.println(helloWorldTarget.helloWorld());
+
+        HelloWorldMementoOriginator helloWorldMementoOriginator = new HelloWorldMementoOriginator();
+        HelloWorldMementoOriginator.Memento memento = helloWorldMementoOriginator.set("Hello Memento!").saveToMemento();
+        helloWorldMementoOriginator.set("Hello Whatever!");
+        helloWorldMementoOriginator.restoreFromMemento(memento);
+        System.out.println(helloWorldMementoOriginator.helloWorld());
 
     }
 }
