@@ -1,7 +1,10 @@
 package helloworld.behavioral.command;
 
-import helloworld.behavioral.Printer;
+import com.sun.org.apache.xml.internal.serialize.Printer;
 import org.junit.Test;
+
+import java.io.PrintStream;
+
 import static org.mockito.Mockito.*;
 
 /**
@@ -12,7 +15,7 @@ public class HelloWorldPrintCommandTest {
     @Test
     public void testHelloWorldPrintCommand(){
         HelloWorldPrintCommand helloWorldPrintCommand = new HelloWorldPrintCommand();
-        Printer mockPrinter = mock(Printer.class);
+        PrintStream mockPrinter = mock(PrintStream.class);
         helloWorldPrintCommand.setPrinter(mockPrinter);
         helloWorldPrintCommand.execute();
         verify(mockPrinter,times(1)).println("Hello Command!");

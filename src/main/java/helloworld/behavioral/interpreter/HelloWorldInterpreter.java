@@ -1,8 +1,8 @@
 package helloworld.behavioral.interpreter;
 
-import helloworld.behavioral.Printer;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,9 +41,9 @@ public class HelloWorldInterpreter {
 
     static class PrintlnFunction implements Function {
 
-        private Printer printer = Printer.instance();
+        private PrintStream printer = System.out;
 
-        void setPrinter(Printer printer) {
+        void setPrinter(PrintStream printer) {
             this.printer = printer;
         }
 
