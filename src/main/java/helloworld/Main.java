@@ -13,6 +13,7 @@ import helloworld.behavioral.mediator.HelloWorldObject;
 import helloworld.behavioral.memento.HelloWorldMementoOriginator;
 import helloworld.behavioral.observer.HelloWorldObserver;
 import helloworld.behavioral.observer.Subject;
+import helloworld.behavioral.state.HelloWorldStateContext;
 import helloworld.creational.abstract_factory.AbstractFactory;
 import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
 import helloworld.creational.builder.HelloWorldBuilder;
@@ -118,6 +119,10 @@ public class Main {
 
         Subject subject = new Subject().attach(new HelloWorldObserver());
         subject.notifyObservers();
+
+        HelloWorldStateContext helloWorldStateContext = new HelloWorldStateContext();
+        HelloWorld stateHelloWorld = helloWorldStateContext.appendWord("Hello").appendWord("State");
+        System.out.println(stateHelloWorld.helloWorld());
 
     }
 }
