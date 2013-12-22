@@ -1,5 +1,10 @@
 package helloworld;
 
+import helloworld.behavioral.chain_of_responsibility.DesignPatternHandler;
+import helloworld.behavioral.chain_of_responsibility.HelloHandler;
+import helloworld.behavioral.chain_of_responsibility.HelloWorldHandler;
+import helloworld.behavioral.command.Command;
+import helloworld.behavioral.command.HelloWorldPrintCommand;
 import helloworld.creational.abstract_factory.AbstractFactory;
 import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
 import helloworld.creational.builder.HelloWorldBuilder;
@@ -25,9 +30,9 @@ public class Main {
 
         System.out.println("We are creational patterns!");
 
-        SplitHelloWorldFactory splitHelloWorldFactory = AbstractFactory.select(AbstractFactory.Type.DesignPattern);
-        HelloWorld abstractFactoryHelloWorld = new SplitHelloWorld(splitHelloWorldFactory.createHelloWorldSlogan(),
-                splitHelloWorldFactory.createHelloWorldTarget());
+        SplitHelloWorldFactory abstractFactory = AbstractFactory.select(AbstractFactory.Type.DesignPattern);
+        HelloWorld abstractFactoryHelloWorld = new SplitHelloWorld(abstractFactory.createHelloWorldSlogan(),
+                abstractFactory.createHelloWorldTarget());
         System.out.println(abstractFactoryHelloWorld.helloWorld());
 
         HelloWorld builderHelloWorld = HelloWorldBuilder.builder()
@@ -61,8 +66,8 @@ public class Main {
         HelloWorld compositeHelloWorld = new CompositeHelloWorld(bridgeHelloWorld, new CompositeHelloWorld.DefaultHelloWorld());
         System.out.println(compositeHelloWorld.helloWorld());
 
-        HelloWorldDecorator helloWorldDecorator = new HelloWorldDecorator(new HelloWorldDecorator.DefaultHelloWorld());
-        System.out.println(helloWorldDecorator.helloDecorator());
+        HelloWorldDecorator decoratorHelloWorld = new HelloWorldDecorator(new HelloWorldDecorator.DefaultHelloWorld());
+        System.out.println(decoratorHelloWorld.helloDecorator());
 
         HelloWorld facadeHelloWorld = HelloWorldFacade.instance().facadeHelloWorld();
         System.out.println(facadeHelloWorld.helloWorld());
@@ -70,9 +75,16 @@ public class Main {
         HelloWorld flyWeightHelloWorld = HelloWorldFlyWeightFactory.instance().createHelloWorld("Hello Flyweight!");
         System.out.println(flyWeightHelloWorld.helloWorld());
 
-        HelloWorldProxy helloWorldProxy = new HelloWorldProxy(new HelloWorldProxy.DefaultHelloWorld());
-        System.out.println(helloWorldProxy.helloWorld());
+        HelloWorld proxyHelloWorld = new HelloWorldProxy(new HelloWorldProxy.DefaultHelloWorld());
+        System.out.println(proxyHelloWorld.helloWorld());
 
         System.out.println("We are behavioral patterns!");
+
+        HelloWorldHandler helloWorldChainOfResponsibility = new HelloHandler().setNext(new DesignPatternHandler());
+        System.out.println(helloWorldChainOfResponsibility.helloWorld());
+
+        Command helloWorldCommand = new HelloWorldPrintCommand();
+        helloWorldCommand.execute();
+
     }
 }
