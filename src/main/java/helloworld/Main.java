@@ -6,6 +6,9 @@ import helloworld.behavioral.chain_of_responsibility.HelloWorldHandler;
 import helloworld.behavioral.command.Command;
 import helloworld.behavioral.command.HelloWorldPrintCommand;
 import helloworld.behavioral.interpreter.HelloWorldInterpreter;
+import helloworld.behavioral.mediator.HelloWorldMediator;
+import helloworld.behavioral.mediator.HelloWorldSlogan;
+import helloworld.behavioral.mediator.HelloWorldTarget;
 import helloworld.creational.abstract_factory.AbstractFactory;
 import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
 import helloworld.creational.builder.HelloWorldBuilder;
@@ -89,6 +92,13 @@ public class Main {
 
         HelloWorldInterpreter helloWorldInterpreter = new HelloWorldInterpreter();
         helloWorldInterpreter.interpret("println('Hello Interpreter!')");
+
+        HelloWorldSlogan helloWorldSlogan = new HelloWorldSlogan();
+        HelloWorldTarget helloWorldTarget = new HelloWorldTarget();
+        HelloWorldMediator helloWorldMediator = new HelloWorldMediator(helloWorldSlogan,helloWorldTarget);
+        helloWorldSlogan.setHelloWorldMediator(helloWorldMediator);
+        helloWorldTarget.setHelloWorldMediator(helloWorldMediator);
+        System.out.println(helloWorldTarget.helloWorld());
 
     }
 }
