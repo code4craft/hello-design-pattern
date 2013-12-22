@@ -1,7 +1,7 @@
 hello-design-pattern
 ====================
 
-Hello world use all 23 kinds of GoF design patterns.
+Hello world using all 23 kinds of GoF design patterns.
 
 ```java
 public class Main {
