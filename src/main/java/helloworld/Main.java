@@ -16,6 +16,7 @@ import helloworld.behavioral.observer.Subject;
 import helloworld.behavioral.state.HelloWorldStateContext;
 import helloworld.behavioral.strategy.DesignPatternHelloWorldStrategy;
 import helloworld.behavioral.strategy.HelloWorldStrategyContext;
+import helloworld.behavioral.template_method.TemplateMethodHelloWorld;
 import helloworld.creational.abstract_factory.AbstractFactory;
 import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
 import helloworld.creational.builder.HelloWorldBuilder;
@@ -128,6 +129,9 @@ public class Main {
 
         HelloWorldStrategyContext helloWorldStrategyContext = new HelloWorldStrategyContext(new DesignPatternHelloWorldStrategy());
         System.out.println(helloWorldStrategyContext.helloWorld());
+
+        HelloWorld templateMethodHelloWorld = new TemplateMethodHelloWorld();
+        System.out.println(templateMethodHelloWorld.helloWorld());
 
     }
 }
