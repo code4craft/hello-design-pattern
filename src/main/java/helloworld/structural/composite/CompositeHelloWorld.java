@@ -14,7 +14,7 @@ public class CompositeHelloWorld implements HelloWorld {
 
     private List<HelloWorld> helloWorlds;
 
-    private String lineSeparetor = System.getProperty("line.separator");
+    private String lineSeparator = System.getProperty("line.separator");
 
     public CompositeHelloWorld(HelloWorld... helloWorlds) {
         this.helloWorlds = Arrays.asList(helloWorlds);
@@ -26,7 +26,7 @@ public class CompositeHelloWorld implements HelloWorld {
         for (HelloWorld helloWorld : helloWorlds) {
             helloWorldOuts.add(helloWorld.helloWorld());
         }
-        return StringUtils.join(helloWorldOuts, lineSeparetor);
+        return StringUtils.join(helloWorldOuts, lineSeparator);
     }
 
     public static class DefaultHelloWorld implements HelloWorld{
