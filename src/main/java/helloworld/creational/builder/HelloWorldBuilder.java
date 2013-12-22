@@ -27,12 +27,12 @@ public class HelloWorldBuilder {
     }
 
     public HelloWorld getHelloWorld() {
-        return new SplitHelloWorld(new SplitHelloWorld.HelloWorldSlogan() {
+        return new SplitHelloWorld(new SplitHelloWorld.HelloWorldInterjection() {
             @Override
             public String slogan() {
                 return slogan;
             }
-        }, new SplitHelloWorld.HelloWorldTarget() {
+        }, new SplitHelloWorld.HelloWorldObject() {
             @Override
             public String target() {
                 return target;

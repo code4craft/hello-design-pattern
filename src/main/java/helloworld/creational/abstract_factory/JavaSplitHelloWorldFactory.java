@@ -8,16 +8,16 @@ import helloworld.SplitHelloWorld;
 public class JavaSplitHelloWorldFactory implements SplitHelloWorldFactory {
 
     @Override
-    public SplitHelloWorld.HelloWorldSlogan createHelloWorldSlogan() {
-        return new SplitHelloWorld.DefaultSlogan();
+    public SplitHelloWorld.HelloWorldInterjection createHelloWorldSlogan() {
+        return new SplitHelloWorld.DefaultInterjection();
     }
 
     @Override
-    public SplitHelloWorld.HelloWorldTarget createHelloWorldTarget() {
-        return new JavaHelloWorldTarget();
+    public SplitHelloWorld.HelloWorldObject createHelloWorldTarget() {
+        return new JavaHelloWorldObject();
     }
 
-    class JavaHelloWorldTarget implements SplitHelloWorld.HelloWorldTarget{
+    class JavaHelloWorldObject implements SplitHelloWorld.HelloWorldObject {
 
         @Override
         public String target() {

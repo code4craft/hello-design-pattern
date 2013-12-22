@@ -7,21 +7,21 @@ import helloworld.SplitHelloWorld;
  */
 public class HelloWorldMediator {
 
-    private SplitHelloWorld.HelloWorldSlogan helloWorldSlogan;
+    private SplitHelloWorld.HelloWorldInterjection helloWorldInterjection;
 
-    private SplitHelloWorld.HelloWorldTarget helloWorldTarget;
+    private SplitHelloWorld.HelloWorldObject helloWorldObject;
 
-    public HelloWorldMediator(SplitHelloWorld.HelloWorldSlogan helloWorldSlogan, SplitHelloWorld.HelloWorldTarget helloWorldTarget) {
-        this.helloWorldSlogan = helloWorldSlogan;
-        this.helloWorldTarget = helloWorldTarget;
+    public HelloWorldMediator(SplitHelloWorld.HelloWorldInterjection helloWorldInterjection, SplitHelloWorld.HelloWorldObject helloWorldObject) {
+        this.helloWorldInterjection = helloWorldInterjection;
+        this.helloWorldObject = helloWorldObject;
     }
 
     public String slogan() {
-        return helloWorldSlogan.slogan();
+        return helloWorldInterjection.slogan();
     }
 
     public String target() {
-        return helloWorldTarget.target();
+        return helloWorldObject.target();
     }
 
 }

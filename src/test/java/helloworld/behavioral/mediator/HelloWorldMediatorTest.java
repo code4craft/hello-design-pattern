@@ -11,8 +11,8 @@ public class HelloWorldMediatorTest {
 
     @Test
     public void testHelloWorldMediator(){
-        HelloWorldSlogan helloWorldSlogan = new HelloWorldSlogan();
-        HelloWorldTarget helloWorldTarget = new HelloWorldTarget();
+        HelloWorldInterjection helloWorldSlogan = new HelloWorldInterjection();
+        HelloWorldObject helloWorldTarget = new HelloWorldObject();
         HelloWorldMediator helloWorldMediator = new HelloWorldMediator(helloWorldSlogan,helloWorldTarget);
         helloWorldSlogan.setHelloWorldMediator(helloWorldMediator);
         helloWorldTarget.setHelloWorldMediator(helloWorldMediator);

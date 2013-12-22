@@ -6,7 +6,7 @@ import helloworld.SplitHelloWorld;
 /**
  * @author yihua.huang@dianping.com
  */
-public class HelloWorldTarget implements SplitHelloWorld.HelloWorldTarget, HelloWorld {
+public class HelloWorldObject implements SplitHelloWorld.HelloWorldObject, HelloWorld {
 
     private HelloWorldMediator helloWorldMediator;
 

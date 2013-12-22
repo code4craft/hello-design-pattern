@@ -7,9 +7,9 @@ import helloworld.behavioral.command.Command;
 import helloworld.behavioral.command.HelloWorldPrintCommand;
 import helloworld.behavioral.interpreter.HelloWorldInterpreter;
 import helloworld.behavioral.iterator.HelloWorldCharacterIterator;
+import helloworld.behavioral.mediator.HelloWorldInterjection;
 import helloworld.behavioral.mediator.HelloWorldMediator;
-import helloworld.behavioral.mediator.HelloWorldSlogan;
-import helloworld.behavioral.mediator.HelloWorldTarget;
+import helloworld.behavioral.mediator.HelloWorldObject;
 import helloworld.behavioral.memento.HelloWorldMementoOriginator;
 import helloworld.behavioral.observer.HelloWorldObserver;
 import helloworld.behavioral.observer.Subject;
@@ -103,8 +103,8 @@ public class Main {
         }
         System.out.println();
 
-        HelloWorldSlogan helloWorldSlogan = new HelloWorldSlogan();
-        HelloWorldTarget helloWorldTarget = new HelloWorldTarget();
+        HelloWorldInterjection helloWorldSlogan = new HelloWorldInterjection();
+        HelloWorldObject helloWorldTarget = new HelloWorldObject();
         HelloWorldMediator helloWorldMediator = new HelloWorldMediator(helloWorldSlogan,helloWorldTarget);
         helloWorldSlogan.setHelloWorldMediator(helloWorldMediator);
         helloWorldTarget.setHelloWorldMediator(helloWorldMediator);

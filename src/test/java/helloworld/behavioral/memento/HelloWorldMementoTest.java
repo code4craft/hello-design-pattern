@@ -1,8 +1,5 @@
 package helloworld.behavioral.memento;
 
-import helloworld.behavioral.mediator.HelloWorldMediator;
-import helloworld.behavioral.mediator.HelloWorldSlogan;
-import helloworld.behavioral.mediator.HelloWorldTarget;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -18,7 +15,7 @@ public class HelloWorldMementoTest {
         HelloWorldMementoOriginator helloWorldMementoOriginator = new HelloWorldMementoOriginator();
         HelloWorldMementoOriginator.Memento memento = helloWorldMementoOriginator.set("Hello Memento!").saveToMemento();
         helloWorldMementoOriginator.set("Hello Whatever!");
-        assertThat(helloWorldMementoOriginator.helloWorld(),is("Hello Whatever!"));
+        assertThat(helloWorldMementoOriginator.helloWorld(), is("Hello Whatever!"));
         helloWorldMementoOriginator.restoreFromMemento(memento);
         assertThat(helloWorldMementoOriginator.helloWorld(),is("Hello Memento!"));
     }

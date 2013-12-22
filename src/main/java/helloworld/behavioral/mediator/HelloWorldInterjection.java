@@ -6,7 +6,7 @@ import helloworld.SplitHelloWorld;
 /**
  * @author yihua.huang@dianping.com
  */
-public class HelloWorldSlogan implements SplitHelloWorld.HelloWorldSlogan, HelloWorld {
+public class HelloWorldInterjection implements SplitHelloWorld.HelloWorldInterjection, HelloWorld {
 
     private HelloWorldMediator helloWorldMediator;
 

@@ -1,41 +1,41 @@
 package helloworld;
 
 /**
- * Split "Hello World" to "Hello"(slogan) and "World"(target) so that you can configure it separately.
+ * Split "Hello World" to "Hello"(interjection) and "World"(object) so that you can configure it separately.
  *
  * @author yihua.huang@dianping.com
  */
 public class SplitHelloWorld implements HelloWorld {
 
-    private HelloWorldSlogan helloWorldSlogan;
+    private HelloWorldInterjection helloWorldInterjection;
 
-    private HelloWorldTarget helloWorldTarget;
+    private HelloWorldObject helloWorldObject;
 
     private static final String separator = " ";
 
     private static final String terminator = "!";
 
-    public SplitHelloWorld(HelloWorldSlogan helloWorldSlogan, HelloWorldTarget helloWorldTarget) {
-        this.helloWorldSlogan = helloWorldSlogan;
-        this.helloWorldTarget = helloWorldTarget;
+    public SplitHelloWorld(HelloWorldInterjection helloWorldInterjection, HelloWorldObject helloWorldObject) {
+        this.helloWorldInterjection = helloWorldInterjection;
+        this.helloWorldObject = helloWorldObject;
     }
 
     @Override
     public String helloWorld() {
-        return helloWorldSlogan.slogan() + separator + helloWorldTarget.target() + terminator;
+        return helloWorldInterjection.slogan() + separator + helloWorldObject.target() + terminator;
     }
 
-    public interface HelloWorldSlogan {
+    public interface HelloWorldInterjection {
 
         public String slogan();
     }
 
-    public interface HelloWorldTarget {
+    public interface HelloWorldObject {
 
         public String target();
     }
 
-    public static class DefaultSlogan implements HelloWorldSlogan {
+    public static class DefaultInterjection implements HelloWorldInterjection {
 
         @Override
         public String slogan() {
