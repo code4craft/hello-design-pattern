@@ -17,6 +17,9 @@ import helloworld.behavioral.state.HelloWorldStateContext;
 import helloworld.behavioral.strategy.DesignPatternHelloWorldStrategy;
 import helloworld.behavioral.strategy.HelloWorldStrategyContext;
 import helloworld.behavioral.template_method.TemplateMethodHelloWorld;
+import helloworld.behavioral.visitor.HelloWorldCharacterElements;
+import helloworld.behavioral.visitor.HelloWorldCharacterVisitor;
+import helloworld.behavioral.visitor.HelloWorldVisitor;
 import helloworld.creational.abstract_factory.AbstractFactory;
 import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
 import helloworld.creational.builder.HelloWorldBuilder;
@@ -102,14 +105,14 @@ public class Main {
         helloWorldInterpreter.interpret("println('Hello Interpreter!')");
 
         HelloWorldCharacterIterator helloWorldCharacterIterator = new HelloWorldCharacterIterator("Hello Iterator!".toCharArray());
-        while (helloWorldCharacterIterator.hasNext()){
+        while (helloWorldCharacterIterator.hasNext()) {
             System.out.print(helloWorldCharacterIterator.next());
         }
         System.out.println();
 
         HelloWorldInterjection helloWorldInterjection = new HelloWorldInterjection();
         HelloWorldObject helloWorldObject = new HelloWorldObject();
-        HelloWorldMediator helloWorldMediator = new HelloWorldMediator(helloWorldInterjection,helloWorldObject);
+        HelloWorldMediator helloWorldMediator = new HelloWorldMediator(helloWorldInterjection, helloWorldObject);
         helloWorldInterjection.setHelloWorldMediator(helloWorldMediator);
         helloWorldObject.setHelloWorldMediator(helloWorldMediator);
         System.out.println(helloWorldObject.helloWorld());
@@ -132,6 +135,11 @@ public class Main {
 
         HelloWorld templateMethodHelloWorld = new TemplateMethodHelloWorld();
         System.out.println(templateMethodHelloWorld.helloWorld());
+
+        HelloWorldCharacterElements helloWorldCharacterElements = new HelloWorldCharacterElements("Hello Visitor!".toCharArray());
+        HelloWorldCharacterVisitor helloWorldCharacterVisitor = new HelloWorldCharacterVisitor();
+        helloWorldCharacterElements.accept(helloWorldCharacterVisitor);
+        System.out.println(helloWorldCharacterVisitor.helloWorld());
 
     }
 }
