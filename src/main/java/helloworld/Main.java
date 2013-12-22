@@ -5,6 +5,7 @@ import helloworld.behavioral.chain_of_responsibility.HelloHandler;
 import helloworld.behavioral.chain_of_responsibility.HelloWorldHandler;
 import helloworld.behavioral.command.Command;
 import helloworld.behavioral.command.HelloWorldPrintCommand;
+import helloworld.behavioral.interpreter.HelloWorldInterpreter;
 import helloworld.creational.abstract_factory.AbstractFactory;
 import helloworld.creational.abstract_factory.SplitHelloWorldFactory;
 import helloworld.creational.builder.HelloWorldBuilder;
@@ -85,6 +86,9 @@ public class Main {
 
         Command helloWorldCommand = new HelloWorldPrintCommand();
         helloWorldCommand.execute();
+
+        HelloWorldInterpreter helloWorldInterpreter = new HelloWorldInterpreter();
+        helloWorldInterpreter.interpret("println('Hello Interpreter!')");
 
     }
 }
