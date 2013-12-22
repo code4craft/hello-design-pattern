@@ -11,7 +11,7 @@ public class HelloWorldHandlerTest {
 
     @Test
     public void testHelloWorldHandler(){
-        HelloWorldHandler helloWorldChainOfResponsibility = new HelloHandler().setNext(new DesignPatternHandler());
+        HelloWorldHandler helloWorldChainOfResponsibility = new HelloWorldInterjectionHandler().setNext(new HelloWorldObjectHandler());
         assertThat(helloWorldChainOfResponsibility.helloWorld(),is("Hello Chain of Responsibility!"));
     }
 }

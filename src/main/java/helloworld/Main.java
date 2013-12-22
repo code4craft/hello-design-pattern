@@ -1,7 +1,7 @@
 package helloworld;
 
-import helloworld.behavioral.chain_of_responsibility.DesignPatternHandler;
-import helloworld.behavioral.chain_of_responsibility.HelloHandler;
+import helloworld.behavioral.chain_of_responsibility.HelloWorldObjectHandler;
+import helloworld.behavioral.chain_of_responsibility.HelloWorldInterjectionHandler;
 import helloworld.behavioral.chain_of_responsibility.HelloWorldHandler;
 import helloworld.behavioral.command.Command;
 import helloworld.behavioral.command.HelloWorldPrintCommand;
@@ -92,7 +92,7 @@ public class Main {
 
         System.out.println("We are behavioral patterns!");
 
-        HelloWorldHandler helloWorldChainOfResponsibility = new HelloHandler().setNext(new DesignPatternHandler());
+        HelloWorldHandler helloWorldChainOfResponsibility = new HelloWorldInterjectionHandler().setNext(new HelloWorldObjectHandler());
         System.out.println(helloWorldChainOfResponsibility.helloWorld());
 
         Command helloWorldCommand = new HelloWorldPrintCommand();
