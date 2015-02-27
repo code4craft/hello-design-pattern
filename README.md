@@ -7,6 +7,8 @@ Hello world using all 23 kinds of GoF design patterns.
 public class Main {
 
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
+        //hello=interjection
+        //world=object
 
         System.out.println("We are creational patterns!");
 
