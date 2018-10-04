@@ -1,7 +1,7 @@
 package helloworld;
 
 /**
- * @author yihua.huang@dianping.com
+ * @author  yihua.huang@dianping.com
  */
 public interface HelloWorld {
 
